@@ -27,6 +27,11 @@ function Dashboard({ title }) {
     fetchData();
   }, [range]);
 
+  const transformedData = coins.map((coin) => ({
+    date: new Date(coin.last_updated).toLocaleDateString(),
+    price: coin.current_price,
+  }));
+
   return (
     <Container
       maxWidth={false}
@@ -107,7 +112,7 @@ function Dashboard({ title }) {
         <TrafficChart />
       </div>
       <div style={{ width: "100%" }}>
-        <CryptoPriceChart data={coins} />
+        <CryptoPriceChart data={transformedData} />
       </div>
     </Container>
   );
