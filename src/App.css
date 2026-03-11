@@ -1,3 +1,16 @@
+/* Remove horizontal scroll */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Ensure all elements respect the box-sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
